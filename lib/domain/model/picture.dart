@@ -6,6 +6,6 @@ part 'picture.freezed.dart';
 @freezed
 class Picture with _$Picture {
   const factory Picture({
-    XFile? path,
+    required XFile file,
   }) = _Picture;
 }

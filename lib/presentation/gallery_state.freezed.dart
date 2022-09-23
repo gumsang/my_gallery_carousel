@@ -16,8 +16,9 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$GalleryState {
-  List<XFile>? get imageList => throw _privateConstructorUsedError;
+  List<Picture> get pictureList => throw _privateConstructorUsedError;
   int get index => throw _privateConstructorUsedError;
+  int get length => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $GalleryStateCopyWith<GalleryState> get copyWith =>
@@ -29,7 +30,7 @@ abstract class $GalleryStateCopyWith<$Res> {
   factory $GalleryStateCopyWith(
           GalleryState value, $Res Function(GalleryState) then) =
       _$GalleryStateCopyWithImpl<$Res>;
-  $Res call({List<XFile>? imageList, int index});
+  $Res call({List<Picture> pictureList, int index, int length});
 }
 
 /// @nodoc
@@ -42,17 +43,22 @@ class _$GalleryStateCopyWithImpl<$Res> implements $GalleryStateCopyWith<$Res> {
 
   @override
   $Res call({
-    Object? imageList = freezed,
+    Object? pictureList = freezed,
     Object? index = freezed,
+    Object? length = freezed,
   }) {
     return _then(_value.copyWith(
-      imageList: imageList == freezed
-          ? _value.imageList
-          : imageList // ignore: cast_nullable_to_non_nullable
-              as List<XFile>?,
+      pictureList: pictureList == freezed
+          ? _value.pictureList
+          : pictureList // ignore: cast_nullable_to_non_nullable
+              as List<Picture>,
       index: index == freezed
           ? _value.index
           : index // ignore: cast_nullable_to_non_nullable
+              as int,
+      length: length == freezed
+          ? _value.length
+          : length // ignore: cast_nullable_to_non_nullable
               as int,
     ));
   }
@@ -65,7 +71,7 @@ abstract class _$$_GalleryStateCopyWith<$Res>
           _$_GalleryState value, $Res Function(_$_GalleryState) then) =
       __$$_GalleryStateCopyWithImpl<$Res>;
   @override
-  $Res call({List<XFile>? imageList, int index});
+  $Res call({List<Picture> pictureList, int index, int length});
 }
 
 /// @nodoc
@@ -81,17 +87,22 @@ class __$$_GalleryStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? imageList = freezed,
+    Object? pictureList = freezed,
     Object? index = freezed,
+    Object? length = freezed,
   }) {
     return _then(_$_GalleryState(
-      imageList: imageList == freezed
-          ? _value._imageList
-          : imageList // ignore: cast_nullable_to_non_nullable
-              as List<XFile>?,
+      pictureList: pictureList == freezed
+          ? _value._pictureList
+          : pictureList // ignore: cast_nullable_to_non_nullable
+              as List<Picture>,
       index: index == freezed
           ? _value.index
           : index // ignore: cast_nullable_to_non_nullable
+              as int,
+      length: length == freezed
+          ? _value.length
+          : length // ignore: cast_nullable_to_non_nullable
               as int,
     ));
   }
@@ -101,26 +112,26 @@ class __$$_GalleryStateCopyWithImpl<$Res>
 
 class _$_GalleryState implements _GalleryState {
   const _$_GalleryState(
-      {final List<XFile>? imageList = const [], this.index = 0})
-      : _imageList = imageList;
+      {required final List<Picture> pictureList,
+      required this.index,
+      required this.length})
+      : _pictureList = pictureList;
 
-  final List<XFile>? _imageList;
+  final List<Picture> _pictureList;
   @override
-  @JsonKey()
-  List<XFile>? get imageList {
-    final value = _imageList;
-    if (value == null) return null;
+  List<Picture> get pictureList {
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_pictureList);
   }
 
   @override
-  @JsonKey()
   final int index;
+  @override
+  final int length;
 
   @override
   String toString() {
-    return 'GalleryState(imageList: $imageList, index: $index)';
+    return 'GalleryState(pictureList: $pictureList, index: $index, length: $length)';
   }
 
   @override
@@ -129,15 +140,17 @@ class _$_GalleryState implements _GalleryState {
         (other.runtimeType == runtimeType &&
             other is _$_GalleryState &&
             const DeepCollectionEquality()
-                .equals(other._imageList, _imageList) &&
-            const DeepCollectionEquality().equals(other.index, index));
+                .equals(other._pictureList, _pictureList) &&
+            const DeepCollectionEquality().equals(other.index, index) &&
+            const DeepCollectionEquality().equals(other.length, length));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(_imageList),
-      const DeepCollectionEquality().hash(index));
+      const DeepCollectionEquality().hash(_pictureList),
+      const DeepCollectionEquality().hash(index),
+      const DeepCollectionEquality().hash(length));
 
   @JsonKey(ignore: true)
   @override
@@ -146,13 +159,17 @@ class _$_GalleryState implements _GalleryState {
 }
 
 abstract class _GalleryState implements GalleryState {
-  const factory _GalleryState({final List<XFile>? imageList, final int index}) =
-      _$_GalleryState;
+  const factory _GalleryState(
+      {required final List<Picture> pictureList,
+      required final int index,
+      required final int length}) = _$_GalleryState;
 
   @override
-  List<XFile>? get imageList;
+  List<Picture> get pictureList;
   @override
   int get index;
+  @override
+  int get length;
   @override
   @JsonKey(ignore: true)
   _$$_GalleryStateCopyWith<_$_GalleryState> get copyWith =>

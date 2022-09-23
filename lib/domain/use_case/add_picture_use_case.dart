@@ -1,4 +1,4 @@
-import 'package:my_gallery_carousel/domain/model/picture.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:my_gallery_carousel/domain/repository/gallery_repository.dart';
 
 class AddPictureUseCase {
@@ -6,7 +6,7 @@ class AddPictureUseCase {
 
   AddPictureUseCase(this.repository);
 
-  Future<void> call(List<Picture> add) async {
+  Future<void> call(List<XFile> add) async {
     repository.addList(add);
   }
 }

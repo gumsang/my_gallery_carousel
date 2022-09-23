@@ -16,7 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$Picture {
-  XFile? get path => throw _privateConstructorUsedError;
+  XFile get file => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $PictureCopyWith<Picture> get copyWith => throw _privateConstructorUsedError;
@@ -26,7 +26,7 @@ mixin _$Picture {
 abstract class $PictureCopyWith<$Res> {
   factory $PictureCopyWith(Picture value, $Res Function(Picture) then) =
       _$PictureCopyWithImpl<$Res>;
-  $Res call({XFile? path});
+  $Res call({XFile file});
 }
 
 /// @nodoc
@@ -39,13 +39,13 @@ class _$PictureCopyWithImpl<$Res> implements $PictureCopyWith<$Res> {
 
   @override
   $Res call({
-    Object? path = freezed,
+    Object? file = freezed,
   }) {
     return _then(_value.copyWith(
-      path: path == freezed
-          ? _value.path
-          : path // ignore: cast_nullable_to_non_nullable
-              as XFile?,
+      file: file == freezed
+          ? _value.file
+          : file // ignore: cast_nullable_to_non_nullable
+              as XFile,
     ));
   }
 }
@@ -56,7 +56,7 @@ abstract class _$$_PictureCopyWith<$Res> implements $PictureCopyWith<$Res> {
           _$_Picture value, $Res Function(_$_Picture) then) =
       __$$_PictureCopyWithImpl<$Res>;
   @override
-  $Res call({XFile? path});
+  $Res call({XFile file});
 }
 
 /// @nodoc
@@ -70,13 +70,13 @@ class __$$_PictureCopyWithImpl<$Res> extends _$PictureCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? path = freezed,
+    Object? file = freezed,
   }) {
     return _then(_$_Picture(
-      path: path == freezed
-          ? _value.path
-          : path // ignore: cast_nullable_to_non_nullable
-              as XFile?,
+      file: file == freezed
+          ? _value.file
+          : file // ignore: cast_nullable_to_non_nullable
+              as XFile,
     ));
   }
 }
@@ -84,14 +84,14 @@ class __$$_PictureCopyWithImpl<$Res> extends _$PictureCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_Picture implements _Picture {
-  const _$_Picture({this.path});
+  const _$_Picture({required this.file});
 
   @override
-  final XFile? path;
+  final XFile file;
 
   @override
   String toString() {
-    return 'Picture(path: $path)';
+    return 'Picture(file: $file)';
   }
 
   @override
@@ -99,12 +99,12 @@ class _$_Picture implements _Picture {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Picture &&
-            const DeepCollectionEquality().equals(other.path, path));
+            const DeepCollectionEquality().equals(other.file, file));
   }
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(path));
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(file));
 
   @JsonKey(ignore: true)
   @override
@@ -113,10 +113,10 @@ class _$_Picture implements _Picture {
 }
 
 abstract class _Picture implements Picture {
-  const factory _Picture({final XFile? path}) = _$_Picture;
+  const factory _Picture({required final XFile file}) = _$_Picture;
 
   @override
-  XFile? get path;
+  XFile get file;
   @override
   @JsonKey(ignore: true)
   _$$_PictureCopyWith<_$_Picture> get copyWith =>
